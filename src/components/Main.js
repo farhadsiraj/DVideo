@@ -27,7 +27,9 @@ class Main extends Component {
             <form
               onSubmit={(event) => {
                 {
-                  /* Upload Video...*/
+                  event.preventDefault();
+                  const title = this.videoTitle.value;
+                  this.props.uploadVideo(title);
                 }
               }}
             >
@@ -44,6 +46,9 @@ class Main extends Component {
                   type="text"
                   className="form-control-sm"
                   placeholder="Title..."
+                  ref={(input) => {
+                    this.videoTitle = input;
+                  }}
                   required
                 />
               </div>
