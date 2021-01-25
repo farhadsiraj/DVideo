@@ -138,7 +138,10 @@ class App extends Component {
   };
 
   //Change Video
-  changeVideo = (hash, title) => {};
+  changeVideo = (hash, title) => {
+    this.setState({ currentHash: hash });
+    this.setState({ currentTitle: title });
+  };
 
   render() {
     return (
@@ -150,9 +153,12 @@ class App extends Component {
           </div>
         ) : (
           <Main
+            videos={this.state.videos}
             captureFile={this.captureFile}
             uploadVideo={this.uploadVideo}
+            changeVideo={this.changeVideo}
             currentHash={this.state.currentHash}
+            currentTitle={this.state.currentTitle}
           />
         )}
       </div>

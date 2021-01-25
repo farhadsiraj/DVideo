@@ -18,7 +18,11 @@ class Main extends Component {
                 controls
               ></video>
             </div>
-            <h3>{/* Code... */}</h3>
+            <h3>
+              <b>
+                <i>{this.props.currentTitle}</i>
+              </b>
+            </h3>
           </div>
           <div
             className="col-md-2 overflow-auto text-center"
@@ -60,19 +64,33 @@ class Main extends Component {
               </button>
               &nbsp;
             </form>
-            {/* Map Video...*/}
-            {/* Return Video...*/}
-            <div style={{ width: "175px" }}>
-              <div className="card-title bg-dark">
-                <small className="text-white">
-                  <b>{/*Video title*/}</b>
-                </small>
-              </div>
-              <div>
-                {/* Change Video...*/}
-                {/* Return Side Videos...*/}
-              </div>
-            </div>
+            {this.props.videos.map((video, key) => {
+              return (
+                <div
+                  className="card mb-4 text-center bg-secondary mx-auto"
+                  style={{ width: "175px" }}
+                  key={key}
+                >
+                  <div className="card-title bg-dark">
+                    <small className="text-white">
+                      <b>{video.title}</b>
+                    </small>
+                  </div>
+                  <div>
+                    <p
+                      onClick={() =>
+                        this.props.changeVideo(video.hash, video.title)
+                      }
+                    >
+                      <video
+                        src={`https://ipfs.infura.io/ipfs/${video.hash}`}
+                        style={{ width: "150px" }}
+                      />
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
