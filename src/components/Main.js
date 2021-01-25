@@ -13,7 +13,10 @@ class Main extends Component {
               className="embed-responsive embed-responsive-16by9"
               style={{ maxHeight: "768px" }}
             >
-              {/* Video... */}
+              <video
+                src={`https://ipfs.infura.io/ipfs/${this.props.currentHash}`}
+                controls
+              ></video>
             </div>
             <h3>{/* Code... */}</h3>
           </div>
