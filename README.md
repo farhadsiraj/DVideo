@@ -2,7 +2,7 @@
 
 ![Video URL](https://emojipedia-us.s3.amazonaws.com/content/2020/04/05/yt.png)
 
-[Tutorial URL](https://www.youtube.com/watch?v=OLsteD3xkPQ)
+[Tutorial URL](https://youtu.be/OLsteD3xkPQ)
 
 ## 🔧 Project Diagram:
 
